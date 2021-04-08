@@ -1,0 +1,18 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class NameTransfer : MonoBehaviour
+{
+    public static string theName;
+    public GameObject inputField;
+    public GameObject textDisplay;
+
+    public void StoreName()
+    {
+        MusicManager.MusicMan.Audio.PlayOneShot(MusicManager.MusicMan.Click);
+        theName = inputField.GetComponent<Text>().text;
+        textDisplay.GetComponent<Text>().text = "Welcome " + theName + " to the game";
+    }
+}
